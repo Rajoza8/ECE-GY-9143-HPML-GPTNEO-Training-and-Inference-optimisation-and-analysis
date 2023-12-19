@@ -1,6 +1,6 @@
 # ECE-GY-9143-HPML-GPTNEO-Training-and-Inference-optimisation-and-analysis
 
-All the files outside the Training Folder are files for Inference of GPT-Neo and it's optimisations. Below are the instructions to run the files and generate results for INFERENCE.
+All the files outside the Training Folder are files for Inference of GPT-Neo and it's optimisations. Below are the instructions to run the files and generate results for INFERENCE(work by ro2151).
 
 1. Run a working Singularity container with Sufficient overlay image.
 
