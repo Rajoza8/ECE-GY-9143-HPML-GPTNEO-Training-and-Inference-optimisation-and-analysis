@@ -1,0 +1,113 @@
+[2023-12-18 01:13:39,293] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-12-18 01:13:39,909] [WARNING] [runner.py:203:fetch_hostfile] Unable to find hostfile, will proceed with training with local resources only.
+[2023-12-18 01:13:39,920] [INFO] [runner.py:570:main] cmd = /scratch/mm12318/mambaforge/envs/hpml_proj/bin/python -u -m deepspeed.launcher.launch --world_info=eyJsb2NhbGhvc3QiOiBbMCwgMV19 --master_addr=127.0.0.1 --master_port=29500 --enable_each_rank_log=None pretrain_gpt.py --tensor-model-parallel-size 2 --pipeline-model-parallel-size 1 --num-layers 32 --hidden-size 2560 --num-attention-heads 32 --seq-length 2048 --loss-scale 12 --max-position-embeddings 2048 --micro-batch-size 8 --global-batch-size 16 --train-iters 1000 --lr 6.0e-5 --min-lr 6.0e-6 --lr-decay-style cosine --log-interval 1 --eval-iters 40 --eval-interval 1000 --data-path /home/mm12318/HPML/Proj/output_data_text_document --vocab-file /home/mm12318/HPML/Proj/Megatron-DeepSpeed/vocab.json --merge-file /home/mm12318/HPML/Proj/Megatron-DeepSpeed/merges.txt --save-interval 1000 --split 98,2,0 --clip-grad 1.0 --weight-decay 0.1 --adam-beta1 0.9 --adam-beta2 0.95 --init-method-std 0.006 --fp16 --checkpoint-activations --tensorboard-dir ds_z3_nl32_hs2560_gb16_mb8 --deepspeed-activation-checkpointing --zero-stage=3 --deepspeed_config=ds_config.json --no-pipeline-parallel --deepspeed eyJ0cmFpbl9iYXRjaF9zaXplIjogImF1dG8iLCAidHJhaW5fbWljcm9fYmF0Y2hfc2l6ZV9wZXJfZ3B1IjogMSwgInN0ZXBzX3Blcl9wcmludCI6IDEwMCwgInplcm9fb3B0aW1pemF0aW9uIjogeyJzdGFnZSI6IDN9LCAiZnAxNiI6IHsiZW5hYmxlZCI6IHRydWUsICJpbml0aWFsX3NjYWxlX3Bvd2VyIjogMTJ9LCAiYXV0b3R1bmluZyI6IHsiZW5hYmxlZCI6IHRydWUsICJtb2RlbF9pbmZvX3BhdGgiOiAiYXV0b3R1bmluZ19yZXN1bHRzL3Byb2ZpbGVfbW9kZWxfaW5mby9tb2RlbF9pbmZvLmpzb24iLCAibW9kZWxfaW5mbyI6IHsicHJvZmlsZSI6IHRydWV9LCAibWV0cmljX3BhdGgiOiAiYXV0b3R1bmluZ19yZXN1bHRzL3Byb2ZpbGVfbW9kZWxfaW5mby9tZXRyaWNzLmpzb24ifSwgIndhbGxfY2xvY2tfYnJlYWtkb3duIjogdHJ1ZSwgInF1YW50aXplX3RyYWluaW5nIjogeyJlbmFibGVkIjogdHJ1ZSwgInF1YW50aXplX3ZlcmJvc2UiOiB0cnVlLCAicXVhbnRpemVyX2tlcm5lbCI6IHRydWUsICJxdWFudGl6ZS1hbGdvIjogeyJxX3R5cGUiOiAic3ltbWV0cmljIn0sICJxdWFudGl6ZV9iaXRzIjogeyJzdGFydF9iaXRzIjogMTYsICJ0YXJnZXRfYml0cyI6IDh9LCAicXVhbnRpemVfc2NoZWR1bGUiOiB7InF1YW50aXplX3BlcmlvZCI6IDQwMCwgInNjaGVkdWxlX29mZnNldCI6IDB9LCAicXVhbnRpemVfZ3JvdXBzIjogOH0sICJtZW1vcnlfYnJlYWtfZG93biI6IGZhbHNlfQ== --exit-interval 5000 --per_device_train_batch_size 1
+[2023-12-18 01:13:42,005] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-12-18 01:13:42,630] [INFO] [launch.py:138:main] 0 NCCL_DEBUG=warn
+[2023-12-18 01:13:42,630] [INFO] [launch.py:145:main] WORLD INFO DICT: {'localhost': [0, 1]}
+[2023-12-18 01:13:42,630] [INFO] [launch.py:151:main] nnodes=1, num_local_procs=2, node_rank=0
+[2023-12-18 01:13:42,630] [INFO] [launch.py:162:main] global_rank_mapping=defaultdict(<class 'list'>, {'localhost': [0, 1]})
+[2023-12-18 01:13:42,630] [INFO] [launch.py:163:main] dist_world_size=2
+[2023-12-18 01:13:42,630] [INFO] [launch.py:165:main] Setting CUDA_VISIBLE_DEVICES=0,1
+[2023-12-18 01:13:45,198] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2023-12-18 01:13:45,296] [INFO] [real_accelerator.py:158:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+--------------------------------------------------
+DeepSpeed C++/CUDA extension op report
+--------------------------------------------------
+NOTE: Ops not installed will be just-in-time (JIT) compiled at
+      runtime if needed. Op compatibility means that your system
+      meet the required dependencies to JIT install the op.
+--------------------------------------------------
+JIT compiled ops requires ninja
+ninja .................. [92m[OKAY][0m
+--------------------------------------------------
+op name ................ installed .. compatible
+--------------------------------------------------
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-devel package with yum
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+async_io ............... [93m[NO][0m ....... [93m[NO][0m
+fused_adam ............. [93m[NO][0m ....... [92m[OKAY][0m
+cpu_adam ............... [93m[NO][0m ....... [92m[OKAY][0m
+cpu_adagrad ............ [93m[NO][0m ....... [92m[OKAY][0m
+cpu_lion ............... [93m[NO][0m ....... [92m[OKAY][0m
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+evoformer_attn ......... [93m[NO][0m ....... [93m[NO][0m
+fused_lamb ............. [93m[NO][0m ....... [92m[OKAY][0m
+fused_lion ............. [93m[NO][0m ....... [92m[OKAY][0m
+inference_core_ops ..... [93m[NO][0m ....... [92m[OKAY][0m
+cutlass_ops ............ [93m[NO][0m ....... [92m[OKAY][0m
+quantizer .............. [93m[NO][0m ....... [92m[OKAY][0m
+ragged_device_ops ...... [93m[NO][0m ....... [92m[OKAY][0m
+ragged_ops ............. [93m[NO][0m ....... [92m[OKAY][0m
+random_ltd ............. [93m[NO][0m ....... [92m[OKAY][0m
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.1
+[93m [WARNING] [0m using untested triton version (2.1.0), only 1.0.0 is known to be compatible
+sparse_attn ............ [93m[NO][0m ....... [93m[NO][0m
+spatial_inference ...... [93m[NO][0m ....... [92m[OKAY][0m
+transformer ............ [93m[NO][0m ....... [92m[OKAY][0m
+stochastic_transformer . [93m[NO][0m ....... [92m[OKAY][0m
+transformer_inference .. [93m[NO][0m ....... [92m[OKAY][0m
+--------------------------------------------------
+DeepSpeed general environment info:
+torch install path ............... ['/scratch/mm12318/mambaforge/envs/hpml_proj/lib/python3.11/site-packages/torch']
+torch version .................... 2.1.1
+deepspeed install path ........... ['/scratch/mm12318/mambaforge/envs/hpml_proj/lib/python3.11/site-packages/deepspeed']
+deepspeed info ................... 0.12.2, be82fac, HEAD
+torch cuda version ............... 12.1
+torch hip version ................ None
+nvcc version ..................... 12.2
+deepspeed wheel compiled w. ...... torch 0.0, cuda 0.0
+shared memory (/dev/shm) size .... 188.66 GB
+**** Git info for Megatron: git_hash=b2b8b01 git_branch=main ****
+--------------------------------------------------
+DeepSpeed C++/CUDA extension op report
+--------------------------------------------------
+NOTE: Ops not installed will be just-in-time (JIT) compiled at
+      runtime if needed. Op compatibility means that your system
+      meet the required dependencies to JIT install the op.
+--------------------------------------------------
+JIT compiled ops requires ninja
+ninja .................. [92m[OKAY][0m
+--------------------------------------------------
+op name ................ installed .. compatible
+--------------------------------------------------
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-devel package with yum
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+async_io ............... [93m[NO][0m ....... [93m[NO][0m
+fused_adam ............. [93m[NO][0m ....... [92m[OKAY][0m
+cpu_adam ............... [93m[NO][0m ....... [92m[OKAY][0m
+cpu_adagrad ............ [93m[NO][0m ....... [92m[OKAY][0m
+cpu_lion ............... [93m[NO][0m ....... [92m[OKAY][0m
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+evoformer_attn ......... [93m[NO][0m ....... [93m[NO][0m
+fused_lamb ............. [93m[NO][0m ....... [92m[OKAY][0m
+fused_lion ............. [93m[NO][0m ....... [92m[OKAY][0m
+inference_core_ops ..... [93m[NO][0m ....... [92m[OKAY][0m
+cutlass_ops ............ [93m[NO][0m ....... [92m[OKAY][0m
+quantizer .............. [93m[NO][0m ....... [92m[OKAY][0m
+ragged_device_ops ...... [93m[NO][0m ....... [92m[OKAY][0m
+ragged_ops ............. [93m[NO][0m ....... [92m[OKAY][0m
+random_ltd ............. [93m[NO][0m ....... [92m[OKAY][0m
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.1
+[93m [WARNING] [0m using untested triton version (2.1.0), only 1.0.0 is known to be compatible
+sparse_attn ............ [93m[NO][0m ....... [93m[NO][0m
+spatial_inference ...... [93m[NO][0m ....... [92m[OKAY][0m
+transformer ............ [93m[NO][0m ....... [92m[OKAY][0m
+stochastic_transformer . [93m[NO][0m ....... [92m[OKAY][0m
+transformer_inference .. [93m[NO][0m ....... [92m[OKAY][0m
+--------------------------------------------------
+DeepSpeed general environment info:
+torch install path ............... ['/scratch/mm12318/mambaforge/envs/hpml_proj/lib/python3.11/site-packages/torch']
+torch version .................... 2.1.1
+deepspeed install path ........... ['/scratch/mm12318/mambaforge/envs/hpml_proj/lib/python3.11/site-packages/deepspeed']
+deepspeed info ................... 0.12.2, be82fac, HEAD
+torch cuda version ............... 12.1
+torch hip version ................ None
+nvcc version ..................... 12.2
+deepspeed wheel compiled w. ...... torch 0.0, cuda 0.0
+shared memory (/dev/shm) size .... 188.66 GB
+**** Git info for Megatron: git_hash=b2b8b01 git_branch=main ****
+[2023-12-18 01:13:47,651] [INFO] [launch.py:315:sigkill_handler] Killing subprocess 289420
+[2023-12-18 01:13:47,652] [INFO] [launch.py:315:sigkill_handler] Killing subprocess 289421
+[2023-12-18 01:13:47,664] [ERROR] [launch.py:321:sigkill_handler] ['/scratch/mm12318/mambaforge/envs/hpml_proj/bin/python', '-u', 'pretrain_gpt.py', '--local_rank=1', '--tensor-model-parallel-size', '2', '--pipeline-model-parallel-size', '1', '--num-layers', '32', '--hidden-size', '2560', '--num-attention-heads', '32', '--seq-length', '2048', '--loss-scale', '12', '--max-position-embeddings', '2048', '--micro-batch-size', '8', '--global-batch-size', '16', '--train-iters', '1000', '--lr', '6.0e-5', '--min-lr', '6.0e-6', '--lr-decay-style', 'cosine', '--log-interval', '1', '--eval-iters', '40', '--eval-interval', '1000', '--data-path', '/home/mm12318/HPML/Proj/output_data_text_document', '--vocab-file', '/home/mm12318/HPML/Proj/Megatron-DeepSpeed/vocab.json', '--merge-file', '/home/mm12318/HPML/Proj/Megatron-DeepSpeed/merges.txt', '--save-interval', '1000', '--split', '98,2,0', '--clip-grad', '1.0', '--weight-decay', '0.1', '--adam-beta1', '0.9', '--adam-beta2', '0.95', '--init-method-std', '0.006', '--fp16', '--checkpoint-activations', '--tensorboard-dir', 'ds_z3_nl32_hs2560_gb16_mb8', '--deepspeed-activation-checkpointing', '--zero-stage=3', '--deepspeed_config=ds_config.json', '--no-pipeline-parallel', '--deepspeed', 'eyJ0cmFpbl9iYXRjaF9zaXplIjogImF1dG8iLCAidHJhaW5fbWljcm9fYmF0Y2hfc2l6ZV9wZXJfZ3B1IjogMSwgInN0ZXBzX3Blcl9wcmludCI6IDEwMCwgInplcm9fb3B0aW1pemF0aW9uIjogeyJzdGFnZSI6IDN9LCAiZnAxNiI6IHsiZW5hYmxlZCI6IHRydWUsICJpbml0aWFsX3NjYWxlX3Bvd2VyIjogMTJ9LCAiYXV0b3R1bmluZyI6IHsiZW5hYmxlZCI6IHRydWUsICJtb2RlbF9pbmZvX3BhdGgiOiAiYXV0b3R1bmluZ19yZXN1bHRzL3Byb2ZpbGVfbW9kZWxfaW5mby9tb2RlbF9pbmZvLmpzb24iLCAibW9kZWxfaW5mbyI6IHsicHJvZmlsZSI6IHRydWV9LCAibWV0cmljX3BhdGgiOiAiYXV0b3R1bmluZ19yZXN1bHRzL3Byb2ZpbGVfbW9kZWxfaW5mby9tZXRyaWNzLmpzb24ifSwgIndhbGxfY2xvY2tfYnJlYWtkb3duIjogdHJ1ZSwgInF1YW50aXplX3RyYWluaW5nIjogeyJlbmFibGVkIjogdHJ1ZSwgInF1YW50aXplX3ZlcmJvc2UiOiB0cnVlLCAicXVhbnRpemVyX2tlcm5lbCI6IHRydWUsICJxdWFudGl6ZS1hbGdvIjogeyJxX3R5cGUiOiAic3ltbWV0cmljIn0sICJxdWFudGl6ZV9iaXRzIjogeyJzdGFydF9iaXRzIjogMTYsICJ0YXJnZXRfYml0cyI6IDh9LCAicXVhbnRpemVfc2NoZWR1bGUiOiB7InF1YW50aXplX3BlcmlvZCI6IDQwMCwgInNjaGVkdWxlX29mZnNldCI6IDB9LCAicXVhbnRpemVfZ3JvdXBzIjogOH0sICJtZW1vcnlfYnJlYWtfZG93biI6IGZhbHNlfQ==', '--exit-interval', '5000', '--per_device_train_batch_size', '1'] exits with return code = 2
