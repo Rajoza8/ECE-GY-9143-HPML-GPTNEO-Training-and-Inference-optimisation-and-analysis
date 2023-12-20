@@ -73,6 +73,8 @@ python Training/Megatron-DeepSpeed/tools/preprocess_data.py \
 
 with the following [vocab.json](https://huggingface.co/gpt2/blob/main/vocab.json) and [merges.txt](https://huggingface.co/gpt2/blob/main/merges.txt)
 
+Final dataset and index has been stored at Training/Megatron-DeepSpeed/output_data_text_document with both bin and idx file. One can give the path mentioned above to the shell scripts used in training. 
+
 ## Training the model
 
 For standard vanilla training, we can use the following command:
