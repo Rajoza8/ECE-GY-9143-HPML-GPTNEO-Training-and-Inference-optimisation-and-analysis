@@ -61,6 +61,15 @@ The latency results and the input and output prompts generated will be printed o
 
 The default max_tokens is 1024 , do not change that as all results are done using that . 
 
+#INFERENCE OPTIMISATION RESULTS:
+
+The GPT-NEO 2.7B model from Eleuther AI was run on Pytorch DDP , Deepspeed (tensor parallelism + pipeline parallelism ) and Deepspeed optimisations for inference( Cuda Graph and 
+
+Transformer Fuses Kernels) and  low latency and high bandwidth results were obtained using various Model parallelism degrees (Max GPU's =2) and batch sizes(1 to 64). the results are 
+
+uploaded seperately as .png files .
+
+
 
 
 
