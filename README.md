@@ -19,7 +19,7 @@ pip install -r requirements.txt
 
 6.Now to run the Pytorch Distributed Data Parallel configuration of the model the command is :
 
-torchrun nproc_per_node={number of processes you wish to run 1 or 2} run_distributed.py (change the world_size = 1, 2 in the run_distributed.py file accordingly and then run the command)
+python run_ddp.py (change the world_size = 1, 2  and batch_size= (1 to 32) in the main method of run_ddp.py file accordingly and then run the command)
 
 7.To run the Hugging Face Baseline Model using deepspeed inference (with no optimisations) :
 
